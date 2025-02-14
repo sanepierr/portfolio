@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierre Mokili | Portfolio</title>
+    
+    <!-- Libraries -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-bg: #0a192f;
+            --secondary-bg: #172a45;
+            --accent: #64ffda;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+        }
+
+        [data-theme="light"] {
+            --primary-bg: #f0f0f0;
+            --secondary-bg: #ffffff;
+            --accent: #007bff;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        /* Enhanced Hover Effects */
+        .info-card {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(100, 255, 218, 0.1);
+        }
+
+        .info-card:hover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--accent);
+            animation: borderGrow 0.5s forwards;
+        }
+
+        @keyframes borderGrow {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* Profile Section */
+        .profile-header {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--accent);
+            margin: 0 auto 2rem;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Table Enhancements */
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .results-table tr:hover {
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        /* Video Container */
+        .video-container {
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+        }
+
+        /* Contact Links */
+        .contact-link {
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        .contact-link:hover {
+            background: rgba(100, 255, 218, 0.1);
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Profile Section -->
+    <section class="profile-header">
+        <div class="profile-image">
+            <img src="./IMG_4137.jpeg" alt="Mokili Promise Pierre">
+        </div>
+        <h1>Mokili Promise Pierre</h1>
+        <p>BSc Computer Science | Year 2 Student</p>
+    </section>
+
+    <!-- Personal Details -->
+    <section class="container">
+        <div class="info-card" data-aos="fade-up">
+            <h2>Personal Details</h2>
+            <ul>
+                <li><strong>Full Name:</strong> Mokili Promise Pierre</li>
+                <li><strong>Registration:</strong> M23B23/032</li>
+                <li><strong>Course:</strong> BSc Computer Science - Year 2</li>
+                <li><strong>Interests:</strong> Cybersecurity, DevOps, Game Dev</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Academic Results -->
+    <section class="container">
+        <div class="info-card" data-aos="fade-up">
+            <h2>Academic Performance</h2>
+            <table class="results-table">
+                <tr>
+                    <th style="border: 1px solid black; padding: 8px;">Course Title</th>
+                    <th style="border: 1px solid black; padding: 8px;">Mark</th>
+                    <th style="border: 1px solid black; padding: 8px;">CU</th>
+                    <th style="border: 1px solid black; padding: 8px;">GP</th>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">Essential Hardware and Software Concepts</td>
+                    <td style="border: 1px solid black; padding: 8px;">87</td>
+                    <td style="border: 1px solid black; padding: 8px;">4</td>
+                    <td style="border: 1px solid black; padding: 8px;">4.0</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">Fundamentals of Computing</td>
+                    <td style="border: 1px solid black; padding: 8px;">85</td>
+                    <td style="border: 1px solid black; padding: 8px;">4</td>
+                    <td style="border: 1px solid black; padding: 8px;">4.0</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">Structured Programming</td>
+                    <td style="border: 1px solid black; padding: 8px;">88</td>
+                    <td style="border: 1px solid black; padding: 8px;">4</td>
+                    <td style="border: 1px solid black; padding: 8px;">4.0</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">Discrete Mathematics</td>
+                    <td style="border: 1px solid black; padding: 8px;">92</td>
+                    <td style="border: 1px solid black; padding: 8px;">3</td>
+                    <td style="border: 1px solid black; padding: 8px;">5.0</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;">Writing and Study Skills</td>
+                    <td style="border: 1px solid black; padding: 8px;">82</td>
+                    <td style="border: 1px solid black; padding: 8px;">2</td>
+                    <td style="border: 1px solid black; padding: 8px;">4.0</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid black; padding: 8px;" colspan="3"><strong>Semester GPA</strong></td>
+                    <td style="border: 1px solid black; padding: 8px;">4.71</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Coding Hobby -->
+    <section class="container">
+        <div class="info-card" data-aos="fade-up">
+            <h2>Development Passion</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="./utomp3.com - EA SPORTS FC 24  Official Gameplay Trailer.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Goals -->
+    <section class="container">
+        <div class="info-card" data-aos="fade-up">
+            <h2>Career Aspirations</h2>
+            <p>My immediate goal is to master full-stack development with the MERN stack with a focus on secure web applications. 
+                I aim to obtain certifications along the way despite the fact that The Odin Project will only leave me with projects to prove my efficiency instead.</p>
+            </br>
+                <p>Long-term, I want to lead development teams creating privacy-focused web solutions, 
+                and eventually establish a gaming company so that i can finally bring to life the dreams that have kept me grinding for this long.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="container">
+        <div class="info-card" data-aos="fade-up">
+            <h2>Contact Me</h2>
+            <div class="contact-links">
+                <a href="mailto:kiaripierre0@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+                <a href="https://github.com/sanepierr" class="contact-link" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/pierre-mokili" class="contact-link" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Theme Toggle (Preserved from your preferred version)
+        let currentTheme = 'dark';
+        function toggleTheme() {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
+    </script>
+</body>
+</html>
