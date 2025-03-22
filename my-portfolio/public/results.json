@@ -1,0 +1,33 @@
+[
+    {
+      "courseCode": "Essential Hardware and Software Concepts",
+      "courseTitle": 87,
+      "grade": 4,
+      "creditUnits": 4.0
+    },
+    {
+      "courseCode": "Fundamentals of Computing",
+      "courseTitle": 85,
+      "grade": 4,
+      "creditUnits": 4.0
+    },
+    {
+      "courseCode": "Structured Programming",
+      "courseTitle": 88,
+      "grade": 4,
+      "creditUnits": 4.0
+    },
+    {
+      "courseCode": "Discrete Mathematics",
+      "courseTitle": 92,
+      "grade": 3,
+      "creditUnits": 5.0
+    },
+    {
+      "courseCode": "Writing and Study Skills",
+      "courseTitle": 82,
+      "grade": 2,
+      "creditUnits": 4.0
+    }
+  ]
+  
