@@ -19,26 +19,61 @@ import EditIcon from '@mui/icons-material/Edit';
 
 interface Result {
   id: number;
-  courseUnit: string;
-  creditUnit: number;
-  gpa: number;
+  unit: string;
+  grade: string;
+  credits: number;
+  semester: string;
 }
 
 const Results = () => {
   const theme = useTheme();
   const [results, setResults] = useState<Result[]>([
-    { id: 1, courseUnit: 'Mathematics', creditUnit: 3, gpa: 3.5 },
-    { id: 2, courseUnit: 'Physics', creditUnit: 4, gpa: 3.8 },
+    {
+      id: 1,
+      unit: 'Discrete Mathematics',
+      grade: 'A',
+      credits: 3,
+      semester: 'Year 1 Semester 1'
+    },
+    {
+      id: 2,
+      unit: 'Introduction to Programming',
+      grade: 'A-',
+      credits: 4,
+      semester: 'Year 1 Semester 1'
+    },
+    {
+      id: 3,
+      unit: 'Computer Architecture',
+      grade: 'B+',
+      credits: 3,
+      semester: 'Year 1 Semester 1'
+    },
+    {
+      id: 4,
+      unit: 'Calculus and Linear Algebra',
+      grade: 'A',
+      credits: 4,
+      semester: 'Year 1 Semester 1'
+    },
+    {
+      id: 5,
+      unit: 'Communication Skills',
+      grade: 'A-',
+      credits: 2,
+      semester: 'Year 1 Semester 1'
+    }
   ]);
   const [editingId, setEditingId] = useState<number | null>(null);
   const [newResult, setNewResult] = useState<Omit<Result, 'id'>>({
-    courseUnit: '',
-    creditUnit: 0,
-    gpa: 0,
+    unit: '',
+    grade: '',
+    credits: 0,
+    semester: '',
   });
 
   const handleAdd = () => {
-    if (newResult.courseUnit && newResult.creditUnit && newResult.gpa) {
+    if (newResult.unit && newResult.credits && newResult.grade && newResult.semester) {
       setResults([
         ...results,
         {
@@ -46,7 +81,7 @@ const Results = () => {
           ...newResult,
         },
       ]);
-      setNewResult({ courseUnit: '', creditUnit: 0, gpa: 0 });
+      setNewResult({ unit: '', grade: '', credits: 0, semester: '' });
     }
   };
 
@@ -57,9 +92,10 @@ const Results = () => {
   const handleEdit = (result: Result) => {
     setEditingId(result.id);
     setNewResult({
-      courseUnit: result.courseUnit,
-      creditUnit: result.creditUnit,
-      gpa: result.gpa,
+      unit: result.unit,
+      grade: result.grade,
+      credits: result.credits,
+      semester: result.semester,
     });
   };
 
@@ -73,7 +109,7 @@ const Results = () => {
         )
       );
       setEditingId(null);
-      setNewResult({ courseUnit: '', creditUnit: 0, gpa: 0 });
+      setNewResult({ unit: '', grade: '', credits: 0, semester: '' });
     }
   };
 
@@ -117,27 +153,34 @@ const Results = () => {
           >
             <TextField
               label="Course Unit"
-              value={newResult.courseUnit}
+              value={newResult.unit}
               onChange={(e) =>
-                setNewResult({ ...newResult, courseUnit: e.target.value })
+                setNewResult({ ...newResult, unit: e.target.value })
               }
               variant="outlined"
             />
             <TextField
-              label="Credit Unit"
-              type="number"
-              value={newResult.creditUnit}
+              label="Grade"
+              value={newResult.grade}
               onChange={(e) =>
-                setNewResult({ ...newResult, creditUnit: Number(e.target.value) })
+                setNewResult({ ...newResult, grade: e.target.value })
               }
               variant="outlined"
             />
             <TextField
-              label="GPA"
+              label="Credits"
               type="number"
-              value={newResult.gpa}
+              value={newResult.credits}
               onChange={(e) =>
-                setNewResult({ ...newResult, gpa: Number(e.target.value) })
+                setNewResult({ ...newResult, credits: Number(e.target.value) })
+              }
+              variant="outlined"
+            />
+            <TextField
+              label="Semester"
+              value={newResult.semester}
+              onChange={(e) =>
+                setNewResult({ ...newResult, semester: e.target.value })
               }
               variant="outlined"
             />
@@ -161,8 +204,9 @@ const Results = () => {
               <TableHead>
                 <TableRow>
                   <TableCell sx={{ fontWeight: 600 }}>Course Unit</TableCell>
-                  <TableCell sx={{ fontWeight: 600 }}>Credit Unit</TableCell>
-                  <TableCell sx={{ fontWeight: 600 }}>GPA</TableCell>
+                  <TableCell sx={{ fontWeight: 600 }}>Grade</TableCell>
+                  <TableCell sx={{ fontWeight: 600 }}>Credits</TableCell>
+                  <TableCell sx={{ fontWeight: 600 }}>Semester</TableCell>
                   <TableCell sx={{ fontWeight: 600 }}>Actions</TableCell>
                 </TableRow>
               </TableHead>
@@ -178,9 +222,10 @@ const Results = () => {
                       }
                     }}
                   >
-                    <TableCell>{result.courseUnit}</TableCell>
-                    <TableCell>{result.creditUnit}</TableCell>
-                    <TableCell>{result.gpa}</TableCell>
+                    <TableCell>{result.unit}</TableCell>
+                    <TableCell>{result.grade}</TableCell>
+                    <TableCell>{result.credits}</TableCell>
+                    <TableCell>{result.semester}</TableCell>
                     <TableCell>
                       <Button
                         startIcon={<EditIcon />}
