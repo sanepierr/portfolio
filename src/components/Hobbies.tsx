@@ -10,20 +10,20 @@ import {
   Box,
   useTheme,
 } from '@mui/material';
-import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
+import {
+  SportsEsports as GamingIcon,
+} from '@mui/icons-material';
 import BookIcon from '@mui/icons-material/Book';
-import ExtensionIcon from '@mui/icons-material/Extension';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import HikingIcon from '@mui/icons-material/Hiking';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import SportsIcon from '@mui/icons-material/Sports';
 
 const Hobbies = () => {
   const theme = useTheme();
 
   const hobbies = [
     { icon: <DirectionsCarIcon sx={{ fontSize: 40 }} />, title: 'F1 Racing' },
-    { icon: <SportsEsportsIcon sx={{ fontSize: 40 }} />, title: 'EA Sports' },
+    { icon: <GamingIcon sx={{ fontSize: 40 }} />, title: 'EA Sports' },
     { icon: <BookIcon sx={{ fontSize: 40 }} />, title: 'Reading' },
     { icon: <CameraAltIcon sx={{ fontSize: 40 }} />, title: 'Photography' },
     { icon: <HikingIcon sx={{ fontSize: 40 }} />, title: 'Hiking' },
